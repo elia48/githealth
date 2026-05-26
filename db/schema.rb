@@ -10,8 +10,42 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 0) do
+ActiveRecord::Schema[8.1].define(version: 2026_05_26_065425) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
+  create_table "daily_plans", force: :cascade do |t|
+    t.text "actual_nutrition"
+    t.integer "actual_sleep"
+    t.integer "actual_workout_duration"
+    t.string "actual_workout_type"
+    t.datetime "created_at", null: false
+    t.text "planned_nutrition_log"
+    t.integer "planned_sleep"
+    t.integer "planned_workout_duration"
+    t.string "planned_workout_type"
+    t.datetime "updated_at", null: false
+    t.bigint "user_id", null: false
+    t.string "workout_feeling"
+    t.index ["user_id"], name: "index_daily_plans_on_user_id"
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.text "content"
+    t.datetime "created_at", null: false
+    t.bigint "daily_plan_id", null: false
+    t.string "role"
+    t.datetime "updated_at", null: false
+    t.index ["daily_plan_id"], name: "index_messages_on_daily_plan_id"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.string "email"
+    t.string "name"
+    t.datetime "updated_at", null: false
+  end
+
+  add_foreign_key "daily_plans", "users"
+  add_foreign_key "messages", "daily_plans"
 end
