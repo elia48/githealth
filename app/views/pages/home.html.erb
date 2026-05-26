@@ -1,3 +1,96 @@
-<h1>Pages#home</h1>
+<div class="dashboard-page">
 
-<p>Find me in app/views/pages/home.html.erb</p>
+  <section class="score-section">
+    <h1>Total Health Score</h1>
+    <p>Looking excellent today</p>
+
+    <div class="score-circle">
+      <div>
+        <h2>85</h2>
+        <span>/ 100</span>
+      </div>
+    </div>
+
+    <%= link_to new_daily_plan_path, class: "checkin-btn" do %>
+      <i class="fa-solid fa-circle-plus"></i>
+      Start Daily Check-in
+    <% end %>
+  </section>
+
+  <section class="stats-grid">
+    <div class="stat-card">
+      <h4>Sleep</h4>
+      <p><%= @daily_plan.actual_sleep %> h</p>
+    </div>
+
+    <div class="stat-card">
+      <h4>Workout</h4>
+      <p><%= @daily_plan.actual_workout_duration %> m</p>
+    </div>
+  </section>
+
+  <section class="stat-card nutrition-card">
+    <h4>Nutrition</h4>
+    <div class="nutrition-row">
+      <p><%= @daily_plan.actual_nutrition %> kcal</p>
+      <div class="progress-bar">
+        <div class="progress-fill"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ai-card">
+    <div class="ai-icon">
+      <i class="fa-solid fa-wand-magic-sparkles"></i>
+    </div>
+    <h4>Daily AI Insight</h4>
+    <p>
+      Great workout yesterday! Try to get <strong>30 more minutes of sleep</strong>
+      tonight to optimize recovery.
+    </p>
+  </section>
+
+  <section class="plan-card">
+    <div class="plan-header">
+      <h4>
+        <i class="fa-solid fa-circle-check"></i>
+        Confirmed Plan
+      </h4>
+      <span>Active</span>
+    </div>
+
+    <div class="plan-item">
+      <div class="plan-icon">
+        <i class="fa-regular fa-moon"></i>
+      </div>
+      <div>
+        <h5>Prioritize Sleep</h5>
+        <p>Aim for <%= @daily_plan.planned_sleep %> hours tonight to boost recovery.</p>
+      </div>
+    </div>
+
+    <div class="plan-item">
+      <div class="plan-icon">
+        <i class="fa-solid fa-dumbbell"></i>
+      </div>
+      <div>
+        <h5>Active Recovery</h5>
+        <p>
+          <%= @daily_plan.planned_workout_type %>
+          for <%= @daily_plan.planned_workout_duration %> minutes.
+        </p>
+      </div>
+    </div>
+
+    <div class="plan-item">
+      <div class="plan-icon">
+        <i class="fa-solid fa-utensils"></i>
+      </div>
+      <div>
+        <h5>Nutrition Focus</h5>
+        <p><%= @daily_plan.planned_nutrition_log %></p>
+      </div>
+    </div>
+  </section>
+
+</div>
