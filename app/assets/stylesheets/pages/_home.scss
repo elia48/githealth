@@ -1,1 +1,205 @@
 // Specific CSS for your home-page
+.dashboard-page {
+  min-height: 100vh;
+  background: #0d1f1b;
+  color: #f4fff8;
+  padding: 24px 16px 90px;
+  font-family: system-ui, sans-serif;
+}
+
+.score-section {
+  text-align: center;
+
+  h1 {
+    font-size: 22px;
+    font-weight: 800;
+    margin-bottom: 4px;
+  }
+
+  p {
+    color: #b6f7c8;
+    font-size: 13px;
+  }
+}
+
+.score-circle {
+  width: 190px;
+  height: 190px;
+  border-radius: 50%;
+  margin: 28px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background:
+    radial-gradient(circle at center, #0d1f1b 57%, transparent 58%),
+    conic-gradient(
+      #6d6aff 0deg 115deg,
+      transparent 115deg 135deg,
+      #a9ffbd 135deg 245deg,
+      transparent 245deg 265deg,
+      #ffa915 265deg 340deg,
+      transparent 340deg 360deg
+    );
+
+  h2 {
+    font-size: 42px;
+    color: #9dffb7;
+    margin: 0;
+  }
+
+  span {
+    color: #c7d5d0;
+    font-size: 12px;
+  }
+}
+
+.checkin-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: #a9ffbd;
+  color: #062016;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  border-radius: 999px;
+  padding: 16px;
+  margin: 24px 0 18px;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.stat-card,
+.ai-card,
+.plan-card {
+  background: #151c1f;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  padding: 18px;
+  margin-bottom: 16px;
+}
+
+.stat-card h4,
+.ai-card h4 {
+  text-transform: uppercase;
+  color: #b8ffc7;
+  font-size: 10px;
+  letter-spacing: 1.4px;
+  margin-bottom: 16px;
+}
+
+.stat-card p {
+  font-size: 20px;
+  font-weight: 800;
+  margin: 0;
+}
+
+.nutrition-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.progress-bar {
+  flex: 1;
+  height: 6px;
+  background: #30383b;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  width: 75%;
+  height: 100%;
+  background: #ffc531;
+  border-radius: 999px;
+}
+
+.ai-card {
+  background: linear-gradient(135deg, #151c1f, #1d2b28);
+
+  .ai-icon {
+    width: 42px;
+    height: 42px;
+    background: #13e2c9;
+    color: #06352f;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 14px;
+  }
+
+  p {
+    color: #d3ddd8;
+    font-weight: 600;
+    line-height: 1.5;
+  }
+
+  strong {
+    color: #a9ffbd;
+  }
+}
+
+.plan-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 22px;
+
+  h4 {
+    margin: 0;
+    font-size: 18px;
+  }
+
+  i {
+    color: #a9ffbd;
+  }
+
+  span {
+    background: #1f4a3a;
+    color: #a9ffbd;
+    padding: 5px 12px;
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 800;
+  }
+}
+
+.plan-item {
+  display: flex;
+  gap: 14px;
+  margin-bottom: 22px;
+
+  h5 {
+    margin: 0 0 4px;
+    font-size: 15px;
+    font-weight: 800;
+  }
+
+  p {
+    margin: 0;
+    color: #bfffd0;
+    line-height: 1.4;
+  }
+}
+
+.plan-icon {
+  min-width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #2b3135;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #8f8cff;
+}

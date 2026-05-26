@@ -1,0 +1,11 @@
+<ul>
+  <% @daily_plans.each do |daily_plan| %>
+    <li>
+        <ul>
+            <li><%= daily_plan.planned_sleep %></li>
+            <li><%= daily_plan.planned_workout_duration %></li>
+            <li><%= daily_plan.planned_workout_type %></li>
+        </ul>
+    </li>
+  <% end %>
+</ul>
