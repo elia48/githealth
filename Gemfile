@@ -71,3 +71,6 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
+
+# install Devise
+gem "devise"
