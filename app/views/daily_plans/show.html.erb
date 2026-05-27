@@ -1,0 +1,21 @@
+<div class="container">
+  <h1>Daily Breakdown</h1>
+
+  <h2>Sleep</h2>
+  <p>Planned: <%= @daily_plan.planned_sleep %> hours</p>
+  <p>Actual: <%= @daily_plan.actual_sleep %> hours</p>
+
+  <h2>Workout</h2>
+  <p>Planned: <%= @daily_plan.planned_workout_type %></p>
+  <p>Actual: <%= @daily_plan.actual_workout_type %></p>
+  <p>Duration: <%= @daily_plan.actual_workout_duration %> min</p>
+  <p>Feeling: <%= @daily_plan.workout_feeling %></p>
+
+  <h2>Nutrition</h2>
+  <p>Planned: <%= @daily_plan.planned_nutrition_log %></p>
+  <p>Actual: <%= @daily_plan.actual_nutrition %></p>
+
+  <%= link_to "Daily Check-in",
+              edit_daily_plan_path(@daily_plan),
+              class: "btn btn-primary" %>
+</div>
