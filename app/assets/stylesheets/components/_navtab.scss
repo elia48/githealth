@@ -1,0 +1,16 @@
+.nav{
+    background-color: #272a2e;
+    border-radius: 1.5rem;
+    color: #b4ffc9;
+    width: fit-content;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    color: #40395a;
+    background-color: #b4ffc9;
+}
+
+.nav-pills .nav-link {
+    color: #b4ffc9;
+    border-radius: 1.5rem;
+}
