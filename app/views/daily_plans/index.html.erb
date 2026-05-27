@@ -85,12 +85,15 @@
     </p>
   </section>
 
-
+<%= month_calendar do |date| %>
+  <%= date %>
+<% end %>
 
   <ul>
     <% @daily_plans.each do |daily_plan| %>
       <li>
           <ul>
+              <li><%= daily_plan.id %></li>
               <li><%= daily_plan.planned_sleep %></li>
               <li><%= daily_plan.planned_workout_duration %></li>
               <li><%= daily_plan.planned_workout_type %></li>
