@@ -20,16 +20,16 @@ class DailyPlansController < ApplicationController
     @daily_plan = DailyPlan.find(params[:id])
   end
 
-def update
-  @daily_plan = DailyPlan.find(params[:id])
+  def update
+    @daily_plan = DailyPlan.find(params[:id])
 
-  if @daily_plan.update(check_in_params)
-    redirect_to daily_plan_path(@daily_plan),
-    notice: "Daily check-in completed!"
-  else
-    render :edit, status: :unprocessable_entity
+    if @daily_plan.update(check_in_params)
+      redirect_to daily_plan_path(@daily_plan),
+      notice: "Daily check-in completed!"
+    else
+      render :edit, status: :unprocessable_entity
+    end
   end
-end
 
   private
 
