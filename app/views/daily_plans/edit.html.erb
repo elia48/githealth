@@ -1,0 +1,31 @@
+<div class="container">
+  <h1>Daily Check-in</h1>
+
+  <%= simple_form_for @daily_plan do |f| %>
+    <%= f.input :actual_sleep,
+                label: "Hours slept",
+                placeholder: "Example: 7.5" %>
+
+    <%= f.input :actual_workout_duration,
+                label: "Workout duration",
+                placeholder: "Example: 45 minutes" %>
+
+    <%= f.input :actual_workout_type,
+                label: "Workout type",
+                collection: ["Rest", "Walking", "Strength", "HIIT", "Yoga", "Cardio"],
+                prompt: "Select activity" %>
+
+    <%= f.input :workout_feeling,
+                label: "How did it feel?",
+                collection: ["Tired", "Good", "Energetic"],
+                as: :radio_buttons %>
+
+    <%= f.input :actual_nutrition,
+                label: "Nutrition log",
+                as: :text,
+                placeholder: "Example: eggs, rice, chicken, salad...",
+                input_html: { rows: 4 } %>
+
+    <%= f.submit "Submit & Calculate Score", class: "btn btn-primary" %>
+  <% end %>
+</div>
