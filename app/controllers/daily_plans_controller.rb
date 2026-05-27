@@ -3,6 +3,10 @@ class DailyPlansController < ApplicationController
     @daily_plans = DailyPlan.all
   end
 
+  def show
+    @daily_plan = DailyPlan.find(params[:id])
+  end
+
   def new
     @daily_plan = DailyPlan.new
   end
@@ -30,9 +34,10 @@ end
   private
 
   def check_in_params
-  params.require(:daily_plan).permit(:actual_sleep, :actual_workout_duration, :actual_workout_type, :actual_nutrition, :workout_feeling)
+    params.require(:daily_plan).permit(:actual_sleep, :actual_workout_duration, :actual_workout_type, :actual_nutrition, :workout_feeling)
   end
 
   def daily_plan_params
     params.require(:daily_plans).permit(:planned_sleep, :planned_workout_duration,:planned_workout_type, :planned_nutrition_log)
   end
+end
