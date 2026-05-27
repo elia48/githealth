@@ -74,3 +74,6 @@ end
 
 # install Devise
 gem "devise"
+
+# install calendar
+gem "simple_calendar", "~> 2.4"
