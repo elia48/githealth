@@ -1,0 +1,75 @@
+.breakdown-score-section {
+  text-align: center;
+  margin-bottom: 48px;
+
+  .score-circle {
+    margin-bottom: 42px;
+  }
+}
+
+.breakdown-title {
+  font-size: 34px;
+  margin-bottom: 10px;
+}
+
+.breakdown-date {
+  margin-bottom: 34px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.breakdown-grid {
+  display: grid;
+  gap: 28px;
+  margin-bottom: 32px;
+}
+
+.breakdown-grid .stat-card {
+  padding: 24px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.breakdown-card-title {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.breakdown-card-description {
+  margin-bottom: 28px;
+}
+
+.breakdown-value {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+
+  strong {
+    font-size: 26px;
+    color: #9dffb7;
+  }
+
+  span {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 10px;
+  }
+}
+
+.breakdown-btn {
+  margin-top: 8px;
+}
+
+@media (min-width: 768px) {
+  .breakdown-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .breakdown-btn {
+    max-width: 420px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
