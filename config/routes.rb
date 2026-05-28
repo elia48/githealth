@@ -15,5 +15,8 @@ Rails.application.routes.draw do
   # 
   resources :daily_plans, except: [:destroy] do
     resources :messages, only: [:new, :create]
+    member do
+      get :ai_answer
+    end
   end
 end

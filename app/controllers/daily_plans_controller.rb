@@ -31,6 +31,10 @@ class DailyPlansController < ApplicationController
     end
   end
 
+  def ai_answer
+    
+  end
+
   private
 
   def check_in_params
