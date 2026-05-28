@@ -1,21 +1,74 @@
-<div class="container">
-  <h1>Daily Breakdown</h1>
+<div class="breakdown-page">
+  <div class="breakdown-shell">
 
-  <h2>Sleep</h2>
-  <p>Planned: <%= @daily_plan.planned_sleep %> hours</p>
-  <p>Actual: <%= @daily_plan.actual_sleep %> hours</p>
+    <div class="breakdown-header">
+      <h1>Daily Breakdown</h1>
+      <p>Tuesday, Oct 10</p>
+    </div>
 
-  <h2>Workout</h2>
-  <p>Planned: <%= @daily_plan.planned_workout_type %></p>
-  <p>Actual: <%= @daily_plan.actual_workout_type %></p>
-  <p>Duration: <%= @daily_plan.actual_workout_duration %> min</p>
-  <p>Feeling: <%= @daily_plan.workout_feeling %></p>
+    <section class="breakdown-score-card">
+      <div class="score-circle">
+      <div>
+        <h2>85</h2>
+        <span>/ 100</span>
+      </div>
+    </div>
 
-  <h2>Nutrition</h2>
-  <p>Planned: <%= @daily_plan.planned_nutrition_log %></p>
-  <p>Actual: <%= @daily_plan.actual_nutrition %></p>
+      <div class="score-legend">
+        <span><i class="legend-dot legend-green"></i>Workout</span>
+        <span><i class="legend-dot legend-purple"></i>Sleep</span>
+        <span><i class="legend-dot legend-yellow"></i>Nutrition</span>
+      </div>
+    </section>
 
-  <%= link_to "Daily Check-in",
-              edit_daily_plan_path(@daily_plan),
-              class: "btn btn-primary" %>
+    <section class="breakdown-grid">
+      <div class="breakdown-card">
+        <div class="plan-icon">
+          <i class="fa-regular fa-moon"></i>
+        </div>
+
+        <h3>Restorative Sleep</h3>
+        <p class="breakdown-subtitle">Phase Focus</p>
+
+        <p>
+          <strong><%= @daily_plan.actual_sleep %> h</strong>
+          Sleep Score
+        </p>
+      </div>
+
+      <div class="breakdown-card">
+        <div class="plan-icon">
+          <i class="fa-solid fa-dumbbell"></i>
+        </div>
+
+        <h3>HIIT Session</h3>
+        <p class="breakdown-subtitle"><%= @daily_plan.actual_workout_type %></p>
+
+        <p>
+          <strong><%= @daily_plan.actual_workout_duration %> min</strong>
+          <%= @daily_plan.workout_feeling %>
+        </p>
+      </div>
+
+      <div class="breakdown-card">
+        <div class="plan-icon">
+          <i class="fa-solid fa-utensils"></i>
+        </div>
+
+        <h3>Optimal Fuel</h3>
+        <p class="breakdown-subtitle"><%= @daily_plan.actual_nutrition %></p>
+
+        <p>
+          <strong>87</strong>
+          Nutrition Score
+        </p>
+      </div>
+    </section>
+
+    <%= link_to edit_daily_plan_path(@daily_plan), class: "checkin-btn breakdown-checkin-btn" do %>
+      <i class="fa-solid fa-circle-plus"></i>
+      Modify Daily Check-in
+    <% end %>
+
+  </div>
 </div>
