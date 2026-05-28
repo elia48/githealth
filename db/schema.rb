@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_05_26_140536) do
+ActiveRecord::Schema[8.1].define(version: 2026_05_26_140537) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -25,6 +25,7 @@ ActiveRecord::Schema[8.1].define(version: 2026_05_26_140536) do
     t.integer "planned_sleep"
     t.integer "planned_workout_duration"
     t.string "planned_workout_type"
+    t.datetime "start_time"
     t.datetime "updated_at", null: false
     t.bigint "user_id", null: false
     t.string "workout_feeling"

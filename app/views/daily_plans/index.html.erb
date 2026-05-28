@@ -83,20 +83,17 @@
     </p>
   </section>
 
-<%= month_calendar do |date| %>
-  <%= date %>
-<% end %>
+  <%= month_calendar(events: @daily_plans) do |date, daily_plans| %>
+    <div class="calendar-day-content">
+      <div class="calendar-day-number">
+        <%= date %>
+      </div>
 
-  <ul>
-    <% @daily_plans.each do |daily_plan| %>
-      <li>
-          <ul>
-              <li><%= daily_plan.id %></li>
-              <li><%= daily_plan.planned_sleep %></li>
-              <li><%= daily_plan.planned_workout_duration %></li>
-              <li><%= daily_plan.planned_workout_type %></li>
-          </ul>
-      </li>
-    <% end %>
-  </ul>
+      <% daily_plans.each do |daily_plan| %>
+        <%= link_to daily_plan_path(daily_plan), class: "calendar-score" do %>
+          <%= daily_plan.score %>
+        <% end %>
+      <% end %>
+    </div>
+  <% end %>
 </div>
