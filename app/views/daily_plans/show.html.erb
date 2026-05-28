@@ -1,74 +1,75 @@
-<div class="breakdown-page">
-  <div class="breakdown-shell">
+<div class="page-container">
 
-    <div class="breakdown-header">
-      <h1>Daily Breakdown</h1>
-      <p>Tuesday, Oct 10</p>
-    </div>
+  <section class="score-section breakdown-score-section">
+    <h1>Daily Breakdown</h1>
+    <h6>Tuesday, Oct 10</h6>
 
-    <section class="breakdown-score-card">
-      <div class="score-circle">
+    <div class="score-circle">
       <div>
         <h2>85</h2>
-        <span>/ 100</span>
+        <span>Overall Score</span>
       </div>
     </div>
+  </section>
 
-      <div class="score-legend">
-        <span><i class="legend-dot legend-green"></i>Workout</span>
-        <span><i class="legend-dot legend-purple"></i>Sleep</span>
-        <span><i class="legend-dot legend-yellow"></i>Nutrition</span>
-      </div>
-    </section>
+  <section class="breakdown-grid">
 
-    <section class="breakdown-grid">
-      <div class="breakdown-card">
-        <div class="plan-icon">
-          <i class="fa-regular fa-moon"></i>
-        </div>
+    <div class="stat-card">
 
-        <h3>Restorative Sleep</h3>
-        <p class="breakdown-subtitle">Phase Focus</p>
-
-        <p>
-          <strong><%= @daily_plan.actual_sleep %> h</strong>
-          Sleep Score
-        </p>
+      <div class="plan-icon">
+        <i class="fa-regular fa-moon"></i>
       </div>
 
-      <div class="breakdown-card">
-        <div class="plan-icon">
-          <i class="fa-solid fa-dumbbell"></i>
-        </div>
+      <h3>Restorative Sleep</h3>
 
-        <h3>HIIT Session</h3>
-        <p class="breakdown-subtitle"><%= @daily_plan.actual_workout_type %></p>
+      <p>Phase Focus</p>
 
-        <p>
-          <strong><%= @daily_plan.actual_workout_duration %> min</strong>
-          <%= @daily_plan.workout_feeling %>
-        </p>
+      <div class="breakdown-value">
+        <strong><%= @daily_plan.actual_sleep %> h</strong>
+        <span>Sleep Score</span>
       </div>
 
-      <div class="breakdown-card">
-        <div class="plan-icon">
-          <i class="fa-solid fa-utensils"></i>
-        </div>
+    </div>
 
-        <h3>Optimal Fuel</h3>
-        <p class="breakdown-subtitle"><%= @daily_plan.actual_nutrition %></p>
+    <div class="stat-card">
 
-        <p>
-          <strong>87</strong>
-          Nutrition Score
-        </p>
+      <div class="plan-icon">
+        <i class="fa-solid fa-dumbbell"></i>
       </div>
-    </section>
 
-    <%= link_to edit_daily_plan_path(@daily_plan), class: "checkin-btn breakdown-checkin-btn" do %>
-      <i class="fa-solid fa-circle-plus"></i>
-      Modify Daily Check-in
-    <% end %>
+      <h3>HIIT Session</h3>
 
-  </div>
+      <p><%= @daily_plan.actual_workout_type %></p>
+
+      <div class="breakdown-value">
+        <strong><%= @daily_plan.actual_workout_duration %> min</strong>
+        <span><%= @daily_plan.workout_feeling %></span>
+      </div>
+
+    </div>
+
+    <div class="stat-card">
+
+      <div class="plan-icon">
+        <i class="fa-solid fa-utensils"></i>
+      </div>
+
+      <h3>Optimal Fuel</h3>
+
+      <p><%= @daily_plan.actual_nutrition %></p>
+
+      <div class="breakdown-value">
+        <strong>87</strong>
+        <span>Nutrition Score</span>
+      </div>
+
+    </div>
+
+  </section>
+
+  <%= link_to edit_daily_plan_path(@daily_plan), class: "checkin-btn breakdown-btn" do %>
+    <i class="fa-solid fa-circle-plus"></i>
+    Modify Daily Check-in
+  <% end %>
+
 </div>
