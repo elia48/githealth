@@ -5,4 +5,9 @@ class DailyPlan < ApplicationRecord
   validates :planned_sleep, presence: true
   validates :planned_workout_duration, presence: true
   validates :planned_workout_type, presence: true
+  validates :start_time, presence: true
+
+  def score
+    return 75
+  end
 end

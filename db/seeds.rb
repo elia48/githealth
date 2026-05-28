@@ -8,6 +8,11 @@ juan = User.create!(
   password: "password123",
   password_confirmation: "password123"
 )
+elia = User.create!(
+  email: "elia@example.com",
+  password: "123123",
+  password_confirmation: "123123"
+)
 
 alex = User.create!(
   email: "alex@example.com",
@@ -17,6 +22,7 @@ alex = User.create!(
 
 plan1 = DailyPlan.create!(
   user: juan,
+  start_time: Date.today,
   planned_sleep: 8,
   planned_workout_duration: 60,
   workout_feeling: "Energetic",
@@ -30,9 +36,23 @@ plan1 = DailyPlan.create!(
 
 plan2 = DailyPlan.create!(
   user: alex,
+  start_time: Date.yesterday,
   planned_sleep: 7,
   planned_workout_duration: 45,
   workout_feeling: "Moderate",
+  planned_workout_type: "Strength Training",
+  planned_nutrition_log: "Low sugar and balanced carbs",
+  actual_sleep: 8,
+  actual_workout_duration: 50,
+  actual_workout_type: "Strength Training",
+  actual_nutrition: "Eggs, salmon, quinoa, vegetables"
+)
+plan3 = DailyPlan.create!(
+  user: elia,
+  start_time: Date.today,
+  planned_sleep: 7.5,
+  planned_workout_duration: 50,
+  workout_feeling: "Good",
   planned_workout_type: "Strength Training",
   planned_nutrition_log: "Low sugar and balanced carbs",
   actual_sleep: 8,
