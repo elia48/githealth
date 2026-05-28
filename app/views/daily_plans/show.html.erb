@@ -1,8 +1,8 @@
 <div class="page-container">
 
   <section class="score-section breakdown-score-section">
-    <h1>Daily Breakdown</h1>
-    <h6>Tuesday, Oct 10</h6>
+    <h1 class="breakdown-title">Daily Breakdown</h1>
+    <h6 class="breakdown-date">Tuesday, Oct 10</h6>
 
     <div class="score-circle">
       <div>
@@ -15,54 +15,49 @@
   <section class="breakdown-grid">
 
     <div class="stat-card">
-
       <div class="plan-icon">
         <i class="fa-regular fa-moon"></i>
       </div>
 
-      <h3>Restorative Sleep</h3>
-
-      <p>Phase Focus</p>
+      <h3 class="breakdown-card-title">Restorative Sleep</h3>
+      <p class="breakdown-card-description">Phase Focus</p>
 
       <div class="breakdown-value">
         <strong><%= @daily_plan.actual_sleep %> h</strong>
         <span>Sleep Score</span>
       </div>
-
     </div>
 
     <div class="stat-card">
-
       <div class="plan-icon">
         <i class="fa-solid fa-dumbbell"></i>
       </div>
 
-      <h3>HIIT Session</h3>
-
-      <p><%= @daily_plan.actual_workout_type %></p>
+      <h3 class="breakdown-card-title">HIIT Session</h3>
+      <p class="breakdown-card-description">
+        <%= @daily_plan.actual_workout_type %>
+      </p>
 
       <div class="breakdown-value">
         <strong><%= @daily_plan.actual_workout_duration %> min</strong>
         <span><%= @daily_plan.workout_feeling %></span>
       </div>
-
     </div>
 
     <div class="stat-card">
-
       <div class="plan-icon">
         <i class="fa-solid fa-utensils"></i>
       </div>
 
-      <h3>Optimal Fuel</h3>
-
-      <p><%= @daily_plan.actual_nutrition %></p>
+      <h3 class="breakdown-card-title">Optimal Fuel</h3>
+      <p class="breakdown-card-description">
+        <%= @daily_plan.actual_nutrition %>
+      </p>
 
       <div class="breakdown-value">
         <strong>87</strong>
         <span>Nutrition Score</span>
       </div>
-
     </div>
 
   </section>
