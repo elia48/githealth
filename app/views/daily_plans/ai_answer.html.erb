@@ -91,7 +91,32 @@
   </div>
 
   <div class="chatbox p-3 mt-5 mb-5 d-flex flex-column">
-    <div class="flex-grow-1 overflow-auto ">messages</div>
+    <div class="flex-grow-1 overflow-auto ">
+      <% @messages.each do |message| %>
+
+  <section class="ai-card mt-4">
+
+    <h4>
+      <%= message.role == "user" ? "You" : "AI Response" %>
+    </h4>
+
+    <p>
+      <%= simple_format(message.content.gsub("READY_FOR_CONFIRMATION", "")) %>
+    </p>
+
+    <% if message.role == "assistant" && message.content.include?("READY_FOR_CONFIRMATION") %>
+
+      <%= button_to "Confirm Plan",
+        confirm_ai_plan_daily_plan_path(@daily_plan),
+        data: { turbo_method: :patch },
+        class: "checkin-btn" %>
+
+    <% end %>
+
+  </section>
+
+<% end %>  
+    </div>
    <%= simple_form_for :chat,
     url: ask_ai_daily_plan_path(@daily_plan),
     method: :post do |f| %>
