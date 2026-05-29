@@ -12,7 +12,13 @@ class DailyPlansController < ApplicationController
   end
 
   def create
-    @daily_plan = DailyPlan.new(daily_plan_params)
+    @daily_plan = DailyPlan.create(
+      user: current_user,
+      planned_sleep: 8,
+      planned_workout_duration: 60,
+      planned_workout_type: "strenght",
+      planned_nutrition_log: "Protein based meal",
+    )
     @daily_plan.save
   end
 
