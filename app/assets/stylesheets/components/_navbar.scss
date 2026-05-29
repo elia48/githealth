@@ -10,3 +10,21 @@
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 }
+.navbar{
+  border-top: 0.5px solid #13e2c9;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  min-height: 4em;
+  background-color: #0d1f1b;
+}
+.nav-btn{
+  border-radius: 50%;
+  border: solid 1px #13e2c9;
+  height: 3.5em;
+  width: 3.5em;
+  padding: 1.2em;
+}
+.navbar a{
+  color: #13e2c9;
+}

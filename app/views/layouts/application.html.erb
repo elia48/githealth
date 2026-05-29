@@ -25,6 +25,18 @@
 
   <body>
     <%= yield %>
-    <%= render "shared/flashes" %>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    <footer class="navbar d-flex justify-content-around">
+    <%= link_to root_path , class: "d-flex flex-column align-items-center" do %><div class="nav-btn d-flex justify-content-center align-items-center">
+      <i class="fa-solid fa-house"></i></div><p>Dashboard</p><% end %>
+    <%= link_to new_daily_plan_path , class: "d-flex flex-column align-items-center" do %><div class="nav-btn d-flex justify-content-center align-items-center">
+    <i class="fa-solid fa-pen-to-square"></i></div><p>Check-in</p><% end %>
+    <%# <%= link_to ai_answer_daily_plan_path , class: "d-flex flex-column align-items-center" do %>
+    <%# <div class="nav-btn d-flex justify-content-center align-items-center">
+      <i class="fa-solid fa-wand-sparkles"></i></div><p>Plan</p><% end %>
+    <%= link_to daily_plans_path , class: "d-flex flex-column align-items-center" do %><div class="nav-btn d-flex justify-content-center align-items-center">
+      <i class="fa-solid fa-clock-rotate-left"></i></div><p>History</p><% end %>
+  </footer>
   </body>
 </html>
