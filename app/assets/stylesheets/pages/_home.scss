@@ -68,7 +68,13 @@
   overflow: hidden;
 }
 
-.progress-fill {
+.progress-fill-100 {
+  width: 100%;
+  height: 100%;
+  background: #13e2c9;
+  border-radius: 999px;
+}
+.progress-fill-75 {
   width: 75%;
   height: 100%;
   background: #ffc531;
