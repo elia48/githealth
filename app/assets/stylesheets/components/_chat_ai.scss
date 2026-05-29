@@ -1,0 +1,16 @@
+.chatbox{
+    border: 1px dotted #13e2c9;
+    border-radius: 16px;
+    min-height: 30vh;
+}
+.chat-btn{
+    border-radius: 50%;
+    min-width: 2em;
+    height: 100%;
+    border: 1px solid #13e2c9;
+    background: none;
+    color: #13e2c9;
+}
+.chat-placeholder::placeholder{
+    color: #13e2c9;
+}
