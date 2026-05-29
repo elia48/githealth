@@ -1,0 +1,62 @@
+<div class="page-container">
+  <section class="score-section checkin-header">
+    <h1>Daily Check-in</h1>
+    <p>Tell us what actually happened today</p>
+  </section>
+
+  <%= simple_form_for @daily_plan do |f| %>
+    <section class="plan-card checkin-form-card">
+      <div class="plan-item">
+        <div class="plan-icon">
+          <i class="fa-regular fa-moon"></i>
+        </div>
+
+        <div class="checkin-field">
+          <%= f.input :actual_sleep,
+            label: "Sleep Quality",
+            placeholder: "7.5",
+            input_html: { class: "checkin-input" } %>
+        </div>
+      </div>
+
+      <div class="plan-item">
+        <div class="plan-icon">
+          <i class="fa-solid fa-dumbbell"></i>
+        </div>
+
+        <div class="checkin-field">
+          <%= f.input :actual_workout_duration,
+            label: "Workout Duration",
+            placeholder: "45 min",
+            input_html: { class: "checkin-input" } %>
+
+          <%= f.input :actual_workout_type,
+            label: "Workout Type",
+            placeholder: "HIIT, walking, gym...",
+            input_html: { class: "checkin-input" } %>
+
+          <%= f.input :workout_feeling,
+            label: "How did it feel?",
+            collection: ["Tired", "Good", "Energetic"],
+            prompt: "Select feeling",
+            input_html: { class: "checkin-input" } %>
+        </div>
+      </div>
+
+      <div class="plan-item">
+        <div class="plan-icon">
+          <i class="fa-solid fa-utensils"></i>
+        </div>
+
+        <div class="checkin-field">
+          <%= f.input :actual_nutrition,
+            label: "Nutrition Log",
+            placeholder: "Chicken, rice, avocado, protein shake...",
+            input_html: { class: "checkin-input" } %>
+        </div>
+      </div>
+    </section>
+
+    <%= f.submit "Submit & Generate Plan", class: "checkin-btn" %>
+  <% end %>
+</div>

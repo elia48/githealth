@@ -1,79 +1,53 @@
 .checkin-header {
-  text-align: center;
-  margin-bottom: 32px;
+  margin-bottom: 34px;
 
   h1 {
-    color: white;
-    font-size: 30px;
-    font-weight: 700;
+    font-size: 34px;
     margin-bottom: 8px;
   }
 
   p {
-    color: rgba(255,255,255,0.6);
-    margin: 0;
+    color: #9dffb7;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-size: 11px;
+    font-weight: 700;
   }
 }
 
 .checkin-form-card {
-  padding: 20px;
+  margin-bottom: 24px;
 }
 
 .checkin-field {
   width: 100%;
 }
 
-.checkin-field .form-label {
-  color: #B8FFC7;
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 1px;
+.checkin-field label {
+  color: #b8ffc7;
+  font-size: 10px;
   text-transform: uppercase;
-}
-
-.checkin-input,
-.form-control,
-.form-select {
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 16px;
-  color: white;
-  padding: 14px;
-}
-
-.checkin-input:focus,
-.form-control:focus,
-.form-select:focus {
-  background: rgba(255,255,255,0.06);
-  border-color: #8DFFAE;
-  box-shadow: 0 0 0 2px rgba(141,255,174,0.15);
-}
-
-.checkin-form-card .plan-item {
-  margin-bottom: 24px;
-}
-
-.checkin-form-card textarea {
-  min-height: 120px;
-}
-
-.generate-plan-btn {
-  width: 100%;
-  margin-top: 20px;
-
-  background: #8DFFAE;
-  color: #07120D;
-
-  border: none;
-  border-radius: 999px;
-
-  padding: 16px;
-
+  letter-spacing: 1.4px;
   font-weight: 700;
-
-  transition: all .2s ease;
+  margin-bottom: 8px;
 }
 
-.generate-plan-btn:hover {
-  transform: translateY(-2px);
+.checkin-input {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  color: #f4fff8;
+  font-weight: 700;
+  padding: 14px 16px;
+}
+
+.checkin-input::placeholder {
+  color: rgba(244, 255, 248, 0.45);
+}
+
+.checkin-input:focus {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: #9dffb7;
+  color: #f4fff8;
+  box-shadow: none;
 }
