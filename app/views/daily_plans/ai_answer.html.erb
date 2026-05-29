@@ -1,14 +1,15 @@
 <div class="page-container">
   <h1>AI Health Assistant</h1>
-  <p>Ask the AI to modify your daily plan.</p>
-  
+  <p>Tell the AI what you want to adjust in your daily plan.</p>
+
   <section class="ai-card">
     <div class="ai-icon">
       <i class="fa-solid fa-wand-magic-sparkles"></i>
     </div>
     <h5>Daily AI Insight</h5>
     <p>
-      Great workout yesterday! Try to get <strong>30 more minutes of sleep</strong>
+      Great workout yesterday! Try to get
+      <strong>30 more minutes of sleep</strong>
       tonight to optimize recovery.
     </p>
   </section>
@@ -92,15 +93,14 @@
   <div class="chatbox p-3 mt-5 mb-5 d-flex flex-column">
     <div class="flex-grow-1 overflow-auto ">messages</div>
    <%= simple_form_for :chat,
-      url: ai_answer_daily_plan_path(@daily_plan),
-      method: :get do |f| %>
+    url: ask_ai_daily_plan_path(@daily_plan),
+    method: :post do |f| %>
 <label class="form-label string required" for="chat_message">What do you want to change?</label>
 <div class="input-group border rounded-pill p-1">
     <%= f.input :message, class: "text-light",
       placeholder: "Example: I actually slept 6 hours and did 30 min of walking",
       wrapper: false, label: false,
       input_html: { value: params.dig(:chat, :message), class: "chat-placeholder border-0 bg-transparent text-light"} %>
-
     <%= f.button :button, class: "chat-btn rounded-circle z-0" do %>
     <i class="fa-solid fa-paper-plane"></i>
     <% end %>
