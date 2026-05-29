@@ -18,8 +18,11 @@ class DailyPlansController < ApplicationController
       planned_workout_duration: 60,
       planned_workout_type: "strenght",
       planned_nutrition_log: "Protein based meal",
+      start_time: "09:00"
     )
-    @daily_plan.save
+    return unless @daily_plan.save
+
+    redirect_to ai_answer_daily_plan_path(@daily_plan)
   end
 
   def edit
@@ -142,6 +145,4 @@ class DailyPlansController < ApplicationController
       After the update is completed, return a brief confirmation message.
     PROMPT
   end
-
-  
 end
