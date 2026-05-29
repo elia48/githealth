@@ -32,9 +32,21 @@ class DailyPlansController < ApplicationController
   end
 
   def ai_answer
-    
-  end
+    @daily_plan = DailyPlan.find(params[:id])
 
+    return unless params[:chat].present?
+
+    user_message = params[:chat][:message]
+
+    chat = RubyLLM.chat.with_instructions(
+    "You are an AI wellness assistant.
+    The user already has a wellness plan.
+    Suggest modifications based on the user's request.
+    Keep answers concise and actionable."
+    )
+
+    @ai_response = chat.ask(user_message).content
+end
   private
 
   def check_in_params

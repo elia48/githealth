@@ -1,8 +1,8 @@
 <div class="page-container">
-<h1>Your AI-Optimized Plan</h1>
-<p>Generated for today, based on your current recovery and activity metrics.</p>
-
- <section class="ai-card">
+  <h1>AI Health Assistant</h1>
+  <p>Ask the AI to modify your daily plan.</p>
+  
+  <section class="ai-card">
     <div class="ai-icon">
       <i class="fa-solid fa-wand-magic-sparkles"></i>
     </div>
@@ -23,4 +23,22 @@
       </div>
     </div>
   </section>
+   <%= simple_form_for :chat,
+      url: ai_answer_daily_plan_path(@daily_plan),
+      method: :get do |f| %>
+
+    <%= f.input :message,
+      label: "What do you want to change?",
+      placeholder: "Example: I actually slept 6 hours and did 30 min of walking",
+      input_html: { value: params.dig(:chat, :message) } %>
+
+    <%= f.submit "Ask AI", class: "btn btn-primary" %>
+  <% end %>
+
+  <% if @ai_response.present? %>
+    <div class="ai-card mt-4">
+      <h4>AI response</h4>
+      <p><%= @ai_response %></p>
+    </div>
+  <% end %>
 </div>
