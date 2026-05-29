@@ -1,44 +1,67 @@
 <div class="page-container">
   <h1>AI Health Assistant</h1>
-  <p>Ask the AI to modify your daily plan.</p>
-  
+  <p>Tell the AI what you want to adjust in your daily plan.</p>
+
   <section class="ai-card">
     <div class="ai-icon">
       <i class="fa-solid fa-wand-magic-sparkles"></i>
     </div>
+
     <h4>Daily AI Insight</h4>
     <p>
-      Great workout yesterday! Try to get <strong>30 more minutes of sleep</strong>
+      Great workout yesterday! Try to get
+      <strong>30 more minutes of sleep</strong>
       tonight to optimize recovery.
     </p>
   </section>
+
   <section class="plan-card">
     <div class="plan-item">
       <div class="plan-icon">
         <i class="fa-regular fa-moon"></i>
       </div>
+
       <div>
         <h5>Prioritize Sleep</h5>
         <p>Aim for <%= @daily_plan.planned_sleep %> hours tonight to boost recovery.</p>
       </div>
     </div>
   </section>
-   <%= simple_form_for :chat,
-      url: ai_answer_daily_plan_path(@daily_plan),
-      method: :get do |f| %>
+
+<% @messages.each do |message| %>
+
+  <section class="ai-card mt-4">
+
+    <h4>
+      <%= message.role == "user" ? "You" : "AI Response" %>
+    </h4>
+
+    <p>
+      <%= simple_format(message.content.gsub("READY_FOR_CONFIRMATION", "")) %>
+    </p>
+
+    <% if message.role == "assistant" && message.content.include?("READY_FOR_CONFIRMATION") %>
+
+      <%= button_to "Confirm Plan",
+        confirm_ai_plan_daily_plan_path(@daily_plan),
+        data: { turbo_method: :patch },
+        class: "checkin-btn" %>
+
+    <% end %>
+
+  </section>
+
+<% end %>   <!-- ESTE END CIERRA EL EACH -->
+
+  <%= simple_form_for :chat,
+    url: ask_ai_daily_plan_path(@daily_plan),
+    method: :post do |f| %>
 
     <%= f.input :message,
       label: "What do you want to change?",
-      placeholder: "Example: I actually slept 6 hours and did 30 min of walking",
-      input_html: { value: params.dig(:chat, :message) } %>
+      placeholder: "Example: I want to sleep more, but I still want to workout",
+      input_html: { value: "" } %>
 
     <%= f.submit "Ask AI", class: "btn btn-primary" %>
-  <% end %>
-
-  <% if @ai_response.present? %>
-    <div class="ai-card mt-4">
-      <h4>AI response</h4>
-      <p><%= @ai_response %></p>
-    </div>
   <% end %>
 </div>
