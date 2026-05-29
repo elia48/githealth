@@ -1,4 +1,4 @@
-class CreateHelpTicketTool < RubyLLM::Tool
+class CreateDailyPlanTool < RubyLLM::Tool
   description "Creates a daily plan based on the log the user is giving you."
   param :planned_sleep, desc: "Number of hours the user plans to sleep"
   param :planned_workout_duration, desc: "Duration of the planned workout in minutes"
@@ -11,8 +11,6 @@ class CreateHelpTicketTool < RubyLLM::Tool
   end
 
   def execute(planned_sleep:, planned_workout_duration:, planned_workout_type:, planned_nutrition_log:)
-
-
     DailyPlan.create(
       user: @user,
       planned_sleep: planned_sleep,
