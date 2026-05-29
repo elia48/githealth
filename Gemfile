@@ -77,3 +77,8 @@ gem "devise"
 
 # install calendar
 gem "simple_calendar", "~> 2.4"
+
+gem "ruby_llm"
+
+gem "dotenv-rails"
+
