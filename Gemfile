@@ -76,7 +76,7 @@ end
 gem "devise"
 
 # install calendar
-gem "simple_calendar", "~> 2.4"
+gem "simple_calendar", "~> 3.1"
 
 
 # installing llm
